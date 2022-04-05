@@ -19,9 +19,9 @@ $router->get('/', function () use ($router) {
 
 
 $router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('tipos',  ['uses' => 'tiposVehiculoController@showAllAuthors']);
+    $router->get('tipos',  ['uses' => 'tiposVehiculoController@showAllTipos']);
   
-    $router->get('tipos/{id}', ['uses' => 'tiposVehiculoController@showOneAuthor']);
+    $router->get('tipos/{id}', ['uses' => 'tiposVehiculoController@showOneTipo']);
   
     $router->post('tipos', ['uses' => 'tiposVehiculoController@create']);
   

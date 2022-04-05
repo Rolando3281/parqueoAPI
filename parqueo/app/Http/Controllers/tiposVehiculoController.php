@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class tiposVehiculoController extends Controller
 {
     
-    public function showAllAuthors()
+    public function showAllTipos()
     {
         //if(DB::connection()->getDatabaseName())
         //{
@@ -19,7 +19,7 @@ class tiposVehiculoController extends Controller
         return response()->json(tiposVehiculo::all());
     }
 
-    public function showOneAuthor($id)
+    public function showOneTipo($id)
     {
         return response()->json(tiposVehiculo::find($id));
     }
