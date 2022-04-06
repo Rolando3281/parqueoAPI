@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\estancias;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use SebastianBergmann\Environment\Console;
 
 class estanciasController extends Controller
 {
@@ -26,7 +27,18 @@ class estanciasController extends Controller
 
     public function create(Request $request)
     {
-        $author = estancias::create($request->all());
+        $input = $request->all();
+        
+        $input['esResidenteOficial'] = 1;
+        $input['entrada'] = Date("Y-m-d H:i:s");
+        $input['placa'] = $request->input("placa");
+        
+
+
+
+
+        //$author = estancias::create($request->all());
+        $author = estancias::create($input);
 
         return response()->json($author, 201);
     }
