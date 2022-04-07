@@ -54,6 +54,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->delete('estancias/{id}', ['uses' => 'estanciasController@delete']);
   
     $router->put('estancias/{id}', ['uses' => 'estanciasController@update']);
+    $router->put('darSalida/{id}', ['uses' => 'estanciasController@darSalida']);
 
     //RUTAS PARA PAGOS ACTUAL
 
